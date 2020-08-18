@@ -30,11 +30,10 @@ function setSettings(){
 }
 
 
-function test(){
+async function test(){
 	reset();
+    disableButton();
 	setSettings();
-    console.log(languageInput);
-    console.log(speedInput);
 
 }
 
@@ -44,6 +43,14 @@ function reset(){
     speedInput = document.getElementById('speed').value;
 }
 
+function disableButton(){
+button.disabled = true;
+    
+}
+
+function restoreButton(){
+    button.disabled = false;
+}
 function closeSettings(){
     settingsContainer.hidden = true;
 }
@@ -56,6 +63,7 @@ function displaySettings(){
 button.addEventListener("click", test);
 closeIcon.addEventListener("click", closeSettings);
 settingsIcon.addEventListener("click", displaySettings);
+audioElement.addEventListener("ended", restoreButton);
 
 
 
