@@ -53,7 +53,7 @@ function showLoader(){
     loader.hidden =false;
 }
 
-function hideLoader(){
+function hideLoaderN(){
      loader.hidden = true;
      console.log("Hide loader")
 }
@@ -75,7 +75,7 @@ button.addEventListener("click", test);
 closeIcon.addEventListener("click", closeSettings);
 settingsIcon.addEventListener("click", displaySettings);
 audioElement.addEventListener("ended", restoreButton);
-audioElement.addEventListener("loadedmetadata", hideLoader);
+audioElement.addEventListener("loadedmetadata", hideLoaderN);
 
 
 
