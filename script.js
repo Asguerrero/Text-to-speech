@@ -7,8 +7,8 @@ const apiKey = 'b63775f5798f44b38aabb19ecc5564bc'
 const closeIcon = document.getElementById('closeIcon');
 const settingsContainer = document.getElementById('settings-container');
 const settingsIcon =  document.getElementById('settings-icon');
-//let language = document.getElementById('language').value;
-//let speed = document.getElementById('speed').value;
+const loader = document.getElementById('loader');
+
 
 
 // VoiceRSS Javascript SDK
@@ -32,8 +32,10 @@ function setSettings(){
 
 async function test(){
 	reset();
+    showLoader();
     disableButton();
 	setSettings();
+    showLoader();
 
 }
 
@@ -45,12 +47,21 @@ function reset(){
 
 function disableButton(){
 button.disabled = true;
-    
+}
+
+function showLoader(){
+    loader.hidden =false;
+}
+
+function hideLoader(){
+     loader.hidden = true;
+     console.log("Hide loader")
 }
 
 function restoreButton(){
     button.disabled = false;
 }
+
 function closeSettings(){
     settingsContainer.hidden = true;
 }
@@ -64,6 +75,7 @@ button.addEventListener("click", test);
 closeIcon.addEventListener("click", closeSettings);
 settingsIcon.addEventListener("click", displaySettings);
 audioElement.addEventListener("ended", restoreButton);
+audioElement.addEventListener("loadedmetadata", hideLoader);
 
 
 

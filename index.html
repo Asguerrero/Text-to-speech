@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="loader" id="loader" hidden >
+        <img src="loader.svg">
+    </div>
 	<div class="main-container column-flex" id="main-container">
         <h1 class="main-tittle">Convertidor de texto a voz</h1>
-		<textarea id="input" rows="5" class="textarea" placeholder="Escriba el texto que  desea convertir a audio aqui">
-        </textarea>
+		<textarea id="input" rows="5" class="textarea" placeholder="Escriba el texto que desea convertir a audio aqui"></textarea>
         <div class="options-container">
     		<button id="textButton" class="textButton">CONVERTIR</button>
-             <i class="fas fa-cogs settings-icon" id="settings-icon"></i>
+            
+             <i class="fas fa-sliders-h settings-icon"  id="settings-icon"></i>
         </div>
 		<audio id="audio" controls></audio>
        
