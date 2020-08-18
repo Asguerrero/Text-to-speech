@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="main-container column-flex" id="main-container">
+        <h1 class="main-tittle">Convertidor de texto a voz</h1>
+		<textarea id="input" rows="5" class="textarea" placeholder="Escriba el texto que  desea convertir a audio aqui">
+        </textarea>
+        <div class="options-container">
+    		<button id="textButton" class="textButton">CONVERTIR</button>
+             <i class="fas fa-cogs settings-icon" id="settings-icon"></i>
+        </div>
+		<audio id="audio" controls></audio>
+       
+	</div>
+
+    <div class="settings-container" id="settings-container" hidden="" >
+
+        <div class="settings-sub-container column-flex">
+            <div> 
+            <i class="fas fa-times" id="closeIcon"></i>
+            <h1 class="settings-tittle">Configuracion</h1>
+            </div>
+            
+
+            <div class="form-settings">
+                <label for="cars">Idioma:</label>
+                <select id="language" name="cars" >
+                    <option value="es-mx">Espanol-Mexico</option>
+                    <option value="es-es">Espanol-Espana</option>
+                    <option value="en-us">Ingles-EEUU</option>
+                    <option value="en-gb">Ingles-Reino Unido</option>
+                    <option value="pt-br">Portugues-Brazil</option>
+                 </select>
+            </div>
+
+            <div class="form-settings">
+                <label for="vol">Velocidad (entre -10 y 10):</label>
+                <input type="range" id="speed" name="vol" min="-10" max="10">
+            </div>
+
+            
+            
+         </div>
+    </div>
+	
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
